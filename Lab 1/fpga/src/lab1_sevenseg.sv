@@ -5,7 +5,7 @@
 module segment(input logic [3:0] s, output logic [6:0] seg);
 
     // Writing seven segment signal as usual, with s = gfedcba
-	always_comb begin
+	always_comb
         case(s)
           0: seg = 7'b0111111;
           1: seg = 7'b0000110;
@@ -24,6 +24,5 @@ module segment(input logic [3:0] s, output logic [6:0] seg);
           14: seg = 7'b1111001;
           15: seg = 7'b1110001;
           default: seg = 7'b0000000
-	end
 	
 endmodule
