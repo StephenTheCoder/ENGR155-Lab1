@@ -33,9 +33,13 @@ module lab1_skm (
         .led_out  (blinking_led)
     );
 
+    // Switch to LED logic
+    lab1_switchled switch_led (
+        .s   (s),
+        .led (led[1:0])
+    );
+
     // Assigning LEDs based on switches
-    assign led[0] = s[0] ^ s[1];
-    assign led[1] = s[2] & s[3];
     assign led[2] = blinking_led;
 
 endmodule
