@@ -2,7 +2,7 @@
 // Made September 3, 2026
 // Used to be a seven-segment decoder for the seven-segment display
 
-module segment(input logic [3:0] s, output logic [6:0] seg);
+module lab1_sevenseg(input logic [3:0] s, output logic [6:0] seg);
 
     // Writing seven segment signal as usual, with s = gfedcba
     always_comb begin
