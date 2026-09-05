@@ -2,10 +2,11 @@
 // Made September 3, 2026
 // Used to be a counter to blink an LED on 2.4 Hz
 
-module counter(
+module counter(input logic reset,
      output  logic led_out);
 	 
 	 logic int_osc;
+	 logic [27:0] counter;
 	 
 	 // Internal high-speed oscillator
    HSOSC #(.CLKHF_DIV(2'b01))
