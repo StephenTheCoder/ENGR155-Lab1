@@ -15,8 +15,8 @@ module lab1_skm_tb();
     // Use a short maximum count during simulation.
     // The actual FPGA still uses the default value of 4,999,999.
     lab1_skm #(
-        .COUNTER_WIDTH     (3),
-        .COUNTER_MAX_COUNT (3)
+        .width     (3),
+        .max_count (3)
     ) dut (
         .s   (s),
         .led (led),

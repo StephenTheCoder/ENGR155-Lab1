@@ -3,7 +3,7 @@
 // Top-level module that connects the switches to the LEDs and seven-segment display
 // and generates a 2.4 Hz blinking signal using the internal oscillator
 
-module lab1_skm (
+module lab1_skm #(parameter width = 24, parameter [width-1:0] max_count = 4999999) (
     input  logic [3:0] s,
     output logic [2:0] led,
     output logic [6:0] seg
