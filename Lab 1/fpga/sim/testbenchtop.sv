@@ -31,7 +31,7 @@ module lab1_skm_tb();
 
     initial begin
 
-        // Test 1: Both logic functions receive 00
+        // Test 1
         s = 4'b0000;
         #10;
 
@@ -42,9 +42,7 @@ module lab1_skm_tb();
             $error("FAILED! s=0000: expected led[1:0]=00, received %02b.",
                    led[1:0]);
 
-        // Test 2:
-        // s[1:0]=01 tests one XOR case
-        // s[3:2]=01 tests one AND case
+        // Test 2
         s = 4'b0101;
         #10;
 
@@ -55,9 +53,7 @@ module lab1_skm_tb();
             $error("FAILED! s=0101: expected led[1:0]=01, received %02b.",
                    led[1:0]);
 
-        // Test 3:
-        // s[1:0]=10 tests the other XOR case
-        // s[3:2]=10 tests another AND case
+        // Test 3
         s = 4'b1010;
         #10;
 
@@ -68,7 +64,7 @@ module lab1_skm_tb();
             $error("FAILED! s=1010: expected led[1:0]=01, received %02b.",
                    led[1:0]);
 
-        // Test 4: Both logic functions receive 11
+        // Test 4
         s = 4'b1111;
         #10;
 
@@ -80,8 +76,6 @@ module lab1_skm_tb();
                    led[1:0]);
 
         // Test 5: Verify that s is connected to the seven-segment module
-        // Only one representative case is needed because the submodule
-        // testbench already checks all sixteen values.
         s = 4'hA;
         #10;
 
@@ -111,8 +105,7 @@ module lab1_skm_tb();
         else
             $error("FAILED! HSOSC falling-edge test.");
 
-        // Test 7: Verify that the oscillator drives the counter and that
-        // the counter output is connected to led[2].
+        // Test 7: Verify that the oscillator drives the counter
         previous_led2 = led[2];
 
         @(led[2]);

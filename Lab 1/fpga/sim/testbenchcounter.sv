@@ -45,7 +45,7 @@ module lab1_counter_tb();
             $error("FAILED! Reset test: count=%0d, led_out=%b at time %0t.",
                    dut.count, led_out, $time);
 
-        // Test 2: Counter should remain stopped when enable is low
+        // Test 2 - Counter should remain stopped when enable is low
         reset = 1'b1;
         enable  = 1'b0;
 
@@ -59,7 +59,7 @@ module lab1_counter_tb();
             $error("FAILED! Disable test: count=%0d, led_out=%b at time %0t.",
                    dut.count, led_out, $time);
 
-        // Test 3: Enable should allow the counter to increment
+        // Test 3 - Enable should allow the counter to increment
         enable = 1'b1;
 
         @(posedge clk);
@@ -72,7 +72,7 @@ module lab1_counter_tb();
             $error("FAILED! Enable test: expected count=1 and led_out=0, received count=%0d and led_out=%b.",
                    dut.count, led_out);
 
-        // Test 4: Counter should reach max_count
+        // Test 4 - Counter should reach max_count
         repeat (2) @(posedge clk);
         #1;
 
@@ -84,7 +84,6 @@ module lab1_counter_tb();
                    max_count, dut.count);
 
         // Test 5: On the next clock, count should return to zero
-        // and the LED state should toggle
         @(posedge clk);
         #1;
 
