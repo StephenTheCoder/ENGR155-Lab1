@@ -7,7 +7,7 @@ module counter #(parameter width = 24, parameter logic [width-1:0] max_count = 4
      output logic led_out
  );
 
-	 logic [width-1:0] count = 0;
+logic [width-1:0] count = 0;
    // Blink state
    logic state = 0;
 
