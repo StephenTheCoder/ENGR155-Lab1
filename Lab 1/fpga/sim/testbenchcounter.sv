@@ -14,9 +14,9 @@ module lab1_counter_tb();
     logic enable;
     logic led_out;
 
-    lab1_counter #(
-        .WIDTH     (width),
-        .MAX_COUNT (max_count)
+    counter #(
+        .width     (width),
+        .max_count (max_count)
     ) dut (
         .clk     (clk),
         .reset (reset),
