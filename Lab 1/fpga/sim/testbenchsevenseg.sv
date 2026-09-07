@@ -52,28 +52,28 @@ module testbenchsevenseg();
         // Test 4
         s = 4'd4;
         #10;
-        assert (seg == 7'b0011001)
+        assert (seg == 7'b0011010)
             $display("PASSED! Input 4 displayed correctly at time: %0t.", $time);
         else
-            $error("FAILED! Input 4: expected 0011001, received %07b at time: %0t.",
+            $error("FAILED! Input 4: expected 0011010, received %07b at time: %0t.",
                    seg, $time);
 
         // Test 5
         s = 4'd5;
         #10;
-        assert (seg == 7'b0010010)
+        assert (seg == 7'b0010001)
             $display("PASSED! Input 5 displayed correctly at time: %0t.", $time);
         else
-            $error("FAILED! Input 5: expected 0010010, received %07b at time: %0t.",
+            $error("FAILED! Input 5: expected 0010001, received %07b at time: %0t.",
                    seg, $time);
 
         // Test 6
         s = 4'd6;
         #10;
-        assert (seg == 7'b0000010)
+        assert (seg == 7'b0000001)
             $display("PASSED! Input 6 displayed correctly at time: %0t.", $time);
         else
-            $error("FAILED! Input 6: expected 0000010, received %07b at time: %0t.",
+            $error("FAILED! Input 6: expected 0000001, received %07b at time: %0t.",
                    seg, $time);
 
         // Test 7
@@ -124,37 +124,37 @@ module testbenchsevenseg();
         // Test C
         s = 4'd12;
         #10;
-        assert (seg == 7'b1000110)
+        assert (seg == 7'b1000101)
             $display("PASSED! Input C displayed correctly at time: %0t.", $time);
         else
-            $error("FAILED! Input C: expected 1000110, received %07b at time: %0t.",
+            $error("FAILED! Input C: expected 1000101, received %07b at time: %0t.",
                    seg, $time);
 
-        // Test d
+        // Test D
         s = 4'd13;
         #10;
-        assert (seg == 7'b0100001)
+        assert (seg == 7'b0100010)
             $display("PASSED! Input d displayed correctly at time: %0t.", $time);
         else
-            $error("FAILED! Input d: expected 0100001, received %07b at time: %0t.",
+            $error("FAILED! Input d: expected 0100010, received %07b at time: %0t.",
                    seg, $time);
 
         // Test E
         s = 4'd14;
         #10;
-        assert (seg == 7'b0000110)
+        assert (seg == 7'b0000101)
             $display("PASSED! Input E displayed correctly at time: %0t.", $time);
         else
-            $error("FAILED! Input E: expected 0000110, received %07b at time: %0t.",
+            $error("FAILED! Input E: expected 0000101, received %07b at time: %0t.",
                    seg, $time);
 
         // Test F
         s = 4'd15;
         #10;
-        assert (seg == 7'b0001110)
+        assert (seg == 7'b0001101)
             $display("PASSED! Input F displayed correctly at time: %0t.", $time);
         else
-            $error("FAILED! Input F: expected 0001110, received %07b at time: %0t.",
+            $error("FAILED! Input F: expected 0001101, received %07b at time: %0t.",
                    seg, $time);
 
         #100;

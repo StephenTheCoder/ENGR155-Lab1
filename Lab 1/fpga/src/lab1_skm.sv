@@ -23,23 +23,19 @@ module lab1_skm (
     );
 
     // Blinking LED at 2.4 Hz
-    lab1_counter #(
-        .WIDTH     (23),
-        .MAX_COUNT (4_999_999)
+    counter #(
+        .width     (24),
+        .max_count (4_999_999)
     ) blinking_counter (
         .clk      (int_osc),
-        .reset_n  (1'b1),
+        .reset  (1'b1),
         .enable   (1'b1),
         .led_out  (blinking_led)
     );
 
-    // Switch to LED logic
-    lab1_switchled switch_led (
-        .s   (s),
-        .led (led[1:0])
-    );
-
     // Assigning LEDs based on switches
+    assign led[0] = s[0] ^ s[1];
+    assign led[1] = s[2] & s[3];
     assign led[2] = blinking_led;
 
 endmodule
