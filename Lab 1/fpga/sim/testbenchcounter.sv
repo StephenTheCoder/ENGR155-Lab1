@@ -38,6 +38,7 @@ module lab1_counter_tb();
         @(posedge clk);
         #1;
 
+        // dut.count accesses the counter's internal count signal
         assert ((dut.count === 3'd0) && (led_out === 1'b0))
             $display("PASSED! Reset cleared the counter and LED at time %0t.",
                      $time);
@@ -49,6 +50,7 @@ module lab1_counter_tb();
         reset = 1'b1;
         enable  = 1'b0;
 
+        // Wait for three rising clock edges so the counter has time to respond
         repeat (3) @(posedge clk);
         #1;
 
